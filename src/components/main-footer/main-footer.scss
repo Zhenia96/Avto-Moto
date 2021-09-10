@@ -1,0 +1,35 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.main-footer{
+  background-color: rgba(245, 245, 249, 1);
+  padding: 33px 0 43px 0;
+  margin-top: auto;
+  box-sizing: border-box;
+}
+
+.main-footer__menu {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $basic-font;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: rgba(72, 73, 77, 1);
+  margin-right: -65px;
+}
+
+.main-footer__menu-item {
+  margin-right: 65px;
+
+  &:nth-child(6) {
+    margin-right: 57px;
+  }
+}
+
+.main-footer__menu-link {
+  display: block;
+  padding-bottom: 10px;
+}

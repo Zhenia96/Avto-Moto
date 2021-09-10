@@ -1,0 +1,27 @@
+@import '../../scss/variables.scss';
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__name {
+  font-family: $basic-font;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: rgba(72, 73, 77, 1);
+  margin: 0;
+  margin-left: 20px;
+
+  &::first-line {
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
+
+.logo__image {
+  align-self: flex-start;
+}

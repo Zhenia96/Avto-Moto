@@ -1,1 +1,7 @@
 @import 'fonts.scss';
+@import 'blocks/index.scss';
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

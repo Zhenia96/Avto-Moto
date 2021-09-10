@@ -1,0 +1,16 @@
+.main-header {
+  background-color: rgba(245, 245, 249, 1);
+  padding: 15px 0 14px 0;
+}
+
+.main-header__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header__logo {
+  align-self: flex-start;
+  margin-right: 20px;
+  width: 142px;
+}

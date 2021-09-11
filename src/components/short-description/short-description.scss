@@ -1,0 +1,27 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.short-description {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.short-description__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 17px;
+
+  &:nth-child(3) {
+    margin-right: 28px;
+  }
+}
+
+.short-description__value {
+  font-family: $basic-font;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(72, 73, 77, 0.5);
+  margin: 0;
+}

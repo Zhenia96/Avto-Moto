@@ -3,6 +3,7 @@ import MainFooter from '../main-footer/main-footer.jsx';
 import MainHeader from '../main-header/main-header.jsx';
 import ShortDescription from '../short-description/short-description.jsx';
 import Gallery from '../gallery/gallery.jsx';
+import Tabs from '../tabs/tabs.jsx';
 import './main-page.scss';
 
 function MainPage() {
@@ -19,6 +20,7 @@ function MainPage() {
           <a className='page__button page__button--credit' href='/'>В кредит от 11 000 ₽</a>
         </div>
         <Gallery />
+        <Tabs />
       </main>
       <MainFooter />
     </div>

@@ -1,0 +1,30 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.features__list,
+.features__value {
+  margin: 0;
+}
+
+.features__list {
+  font-family: $basic-font;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.features__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(215, 217, 223, 1);
+  margin-top: 13px;
+  box-sizing: border-box;
+}
+
+.features__name {
+  color: rgba(72, 73, 77, 1);
+}
+
+.features__value  {
+  color: rgba(0, 0, 0, 1);
+}

@@ -1,0 +1,37 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.tabs {
+  margin-top: 85px;
+}
+
+.tabs__link-list {
+  @include reset-list;
+
+  display: flex;
+  font-family: $basic-font;
+  font-size: 20px;
+  font-weight: 400;
+  color:rgba(72, 73, 77, 1);
+}
+
+.tabs__link {
+  display: block;
+  padding: 13px;
+  border: 1px solid rgba(215, 217, 223, 1);
+  box-sizing: border-box;
+  width: 195px;
+  min-height: 50px;
+  text-align: center;
+
+  &--active {
+    background-color:rgba(209, 33, 54, 1);
+    border-color: rgba(209, 33, 54, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+.tabs__features {
+  margin-top: 23px;
+  width: 565px;
+}

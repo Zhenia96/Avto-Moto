@@ -20,7 +20,7 @@ function MainPage() {
           <a className='page__button page__button--credit' href='/'>В кредит от 11 000 ₽</a>
         </div>
         <Gallery />
-        <Tabs />
+        <Tabs className='page__tabs' />
       </main>
       <MainFooter />
     </div>

@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: 150fr 143fr;
   grid-template-areas: 'gallery right-column'
-                       'info info';
+                       'tabs tabs';
   column-gap: 57px;
   margin-top: 76px;
 }
@@ -22,6 +22,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.page__tabs {
+  grid-area: tabs;
 }
 
 .page__title {

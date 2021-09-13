@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useState } from 'react/cjs/react.development';
 import Features from '../features/features';
+import Contacts from '../contacts/contacts';
 import './tabs.scss';
 
 const Tab = {
@@ -17,7 +19,7 @@ const getActiveTabClassName = (activeTab, tab) => {
     '';
 }
 
-function Tabs() {
+function Tabs(props) {
   const [activeTab, setActiveTab] = useState(DEFAULT_TAB_VALUE)
 
   const handleTabsFocus = (evt) => {
@@ -34,7 +36,7 @@ function Tabs() {
   }
 
   return (
-    <div className='tabs'>
+    <div className={`${props.className ?? ''} tabs`}>
       <ul className='tabs__link-list' onFocus={handleTabsFocus} onClick={handleTabsClick}>
         <li className='tabs__item'>
           <a className={`tabs__link ${getActiveTabClassName(activeTab, Tab.FEATURE)}`} data-value='feature' href='/'>Характеристики</a>
@@ -47,11 +49,13 @@ function Tabs() {
         </li>
       </ul>
       {Tab.FEATURE === activeTab ? <Features className='tabs__features' /> : null}
-      <section>
-        <h2 className='visually-hidden'>Контакты</h2>
-      </section>
+      {Tab.CONTACT === activeTab ? <Contacts className='tabs__contacts' /> : null}
     </div>
   );
+}
+
+Contacts.propTypes = {
+  className: PropTypes.string,
 }
 
 export default Tabs;

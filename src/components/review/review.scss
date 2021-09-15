@@ -1,0 +1,135 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.review {
+  font-family: $basic-font;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.review__user-name {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: rgba(72, 73, 77, 1);
+  margin-bottom: 14px;
+}
+
+.review__wrapper {
+  @include reset-list;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-style: normal;
+}
+
+.review__dignity,
+.review__limitations,
+.review__comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 1);
+
+  margin: 0;
+}
+
+.review__dignity,
+.review__limitations {
+  position: relative;
+  padding-left: 19px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(209, 33, 54, 1);
+  }
+}
+
+.review__dignity{
+  margin-bottom: 15px;
+
+  &::after {
+    content: '+';
+  }
+}
+
+.review__limitations{
+  margin-bottom: 13px;
+
+  &::after {
+    content: '-';
+  }
+}
+
+.review__comment {
+  margin-bottom: 21px;
+}
+
+.review__big-text {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.review__rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.review__rating-container,
+.review__rating-value {
+  background-size: 21.3px 16px;
+  background-repeat: repeat-x;
+}
+
+.review__rating-container {
+  background-image: url('/img/star-icon.svg');
+  width: 103px;
+  height: 16px;
+  padding-bottom: 4px;
+  margin-right: 20px;
+}
+
+.review__rating-value {
+  background-image: url('/img/active-star-icon.svg');
+  width: 60%;
+  height: 100%;
+}
+
+.review__rating-description {
+  color:rgba(209, 33, 54, 1);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+.review__footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.review__time {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 1);
+  opacity: 0.4;
+  margin-right: 27px;
+}
+
+.review__answer-button {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(209, 33, 54, 1);
+}

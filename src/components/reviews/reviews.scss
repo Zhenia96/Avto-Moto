@@ -1,0 +1,31 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.reviews {
+  position: relative;
+  min-height: 52px;
+}
+
+.reviews__list {
+  @include reset-list;
+}
+
+.reviews__item {
+  margin-bottom: 20px;
+}
+
+.reviews__button {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  display: block;
+  font-family: $basic-font;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: rgba(209, 33, 54, 1);
+  padding: 19px 20px 15px;
+  border: 1px solid rgba(209, 33, 54, 1);
+  box-sizing: border-box;
+}

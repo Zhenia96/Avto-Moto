@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react/cjs/react.development';
 import Features from '../features/features';
 import Contacts from '../contacts/contacts';
+import Reviews from '../reviews/reviews';
 import './tabs.scss';
 
 const Tab = {
@@ -50,6 +51,7 @@ function Tabs(props) {
       </ul>
       {Tab.FEATURE === activeTab ? <Features className='tabs__features' /> : null}
       {Tab.CONTACT === activeTab ? <Contacts className='tabs__contacts' /> : null}
+      {Tab.REVIEW === activeTab ? <Reviews className='tabs__reviews' /> : null}
     </div>
   );
 }

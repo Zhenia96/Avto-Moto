@@ -1,0 +1,25 @@
+.rating {
+  display: flex;
+
+  &:not(:hover) {
+    & .rating__field:checked ~ .rating__star{
+      background-image: url('/img/star-icon.svg');
+    }
+  }
+
+  &:hover {
+    & .rating__star:hover ~ .rating__star {
+      background-image: url('/img/star-icon.svg');
+    }
+  }
+}
+
+.rating__star {
+  font-size: inherit;
+  width: 0.17em;
+  height: 0.17em;
+  padding-left: 0.05em;
+  background-image: url('/img/active-star-icon.svg');
+  background-size: 0.17em 0.17em;
+  background-repeat: no-repeat;
+}

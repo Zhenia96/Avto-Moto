@@ -2,7 +2,7 @@
 
 .wrapper {
   @media (min-width: $desktop-width) {
-    margin-left: calc((100% - 1024px) * 0.419);
-    margin-right: calc((100% - 1024px) * 0.417);
+    margin-left: calc((100% - 1024px) * 0.408 + 10px);
+    margin-right: calc((100% - 1024px) * 0.408 + 10px);
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Review from '../review/review';
 import { userReviews } from '../../mocks/reviews';
+import Button from '../button/button';
 import './reviews.scss';
 
 function Reviews(props) {
@@ -19,7 +20,7 @@ function Reviews(props) {
           </ul> :
           null
       }
-      <a className='reviews__button' href='/'>Оставить отзыв</a>
+      <Button className='reviews__button' href='/'>Оставить отзыв</Button>
     </section>
   );
 }

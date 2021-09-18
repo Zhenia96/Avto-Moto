@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 
 function useRating(defaultRating) {
   const [rating, setRating] = useState(localStorage.getItem('rating') ?? defaultRating);

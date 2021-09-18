@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useState } from 'react/cjs/react.development';
 import Features from '../features/features';
 import Contacts from '../contacts/contacts';
 import Reviews from '../reviews/reviews';

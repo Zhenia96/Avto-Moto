@@ -57,7 +57,7 @@ function Review({ className, userReview }) {
       </blockquote>
       <footer className='review__footer'>
         <time className='review__time' dateTime={getTimeForDateTime(reviewTimestamp)}>{getPassedTime(reviewTimestamp)}</time>
-        <a className='review__answer-button' href='/'>Ответить</a>
+        <a className='review__answer-button' href='./#'>Ответить</a>
       </footer>
     </article>
   );

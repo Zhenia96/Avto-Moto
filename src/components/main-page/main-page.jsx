@@ -17,8 +17,8 @@ function MainPage() {
           <ShortDescription className='page__short-description' />
           <p className='page__price'><span className='page__price-new'>2 300 000 ₽</span><del className='page__price-old'>2 &nbsp;400 000
             ₽</del></p>
-          <a className='page__button page__button--request' href='/'>оставить заявку</a>
-          <Button className='page__button page__button--credit' href='/'>В кредит от 11 000 ₽</Button>
+          <a className='page__button page__button--request' href='./#'>оставить заявку</a>
+          <Button className='page__button page__button--credit' href='./#'>В кредит от 11 000 ₽</Button>
         </div>
         <Gallery />
         <Tabs className='page__tabs' />

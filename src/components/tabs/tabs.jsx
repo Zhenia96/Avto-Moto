@@ -39,13 +39,13 @@ function Tabs(props) {
     <div className={`${props.className ?? ''} tabs`}>
       <ul className='tabs__link-list' onFocus={handleTabsFocus} onClick={handleTabsClick}>
         <li className='tabs__item'>
-          <a className={`tabs__link ${getActiveTabClassName(activeTab, Tab.FEATURE)}`} data-value='feature' href='/'>Характеристики</a>
+          <a className={`tabs__link ${getActiveTabClassName(activeTab, Tab.FEATURE)}`} data-value='feature' href='./#'>Характеристики</a>
         </li>
         <li className='tabs__item'>
-          <a className={`tabs__link ${getActiveTabClassName(activeTab, Tab.REVIEW)}`} data-value='review' href='/'>Отзывы</a>
+          <a className={`tabs__link ${getActiveTabClassName(activeTab, Tab.REVIEW)}`} data-value='review' href='./#'>Отзывы</a>
         </li>
         <li className='tabs__item'>
-          <a className={`tabs__link ${getActiveTabClassName(activeTab, Tab.CONTACT)}`} data-value='contact' href='/'>Контакты</a>
+          <a className={`tabs__link ${getActiveTabClassName(activeTab, Tab.CONTACT)}`} data-value='contact' href='./#'>Контакты</a>
         </li>
       </ul>
       {Tab.FEATURE === activeTab ? <Features className='tabs__features' /> : null}

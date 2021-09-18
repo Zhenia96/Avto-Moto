@@ -31,7 +31,7 @@ function Reviews({ className }) {
           </ul> :
           null
       }
-      <Button onClick={handleButtonClick} className='reviews__button' href='/'>Оставить отзыв</Button>
+      <Button onClick={handleButtonClick} className='reviews__button' href='./#'>Оставить отзыв</Button>
       {isModalOpened ?
         <ModalPortal>
           <ModalReview closeModal={setIsModalOpened} />

@@ -4,6 +4,7 @@ import Review from '../review/review';
 import Button from '../button/button';
 import './reviews.scss';
 import ModalReview from '../modal-review/modal-review.jsx';
+import ModalPortal from '../modal-portal/modal-portal';
 import { useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews/selectors';
 
@@ -31,7 +32,11 @@ function Reviews({ className }) {
           null
       }
       <Button onClick={handleButtonClick} className='reviews__button' href='/'>Оставить отзыв</Button>
-      {isModalOpened ? <ModalReview closeModal={setIsModalOpened} /> : null}
+      {isModalOpened ?
+        <ModalPortal>
+          <ModalReview closeModal={setIsModalOpened} />
+        </ModalPortal>
+        : null}
     </section>
   );
 }

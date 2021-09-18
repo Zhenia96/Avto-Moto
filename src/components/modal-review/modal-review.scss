@@ -1,0 +1,174 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.modal-review {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(189, 190, 194, 0.7);
+  z-index: 100;
+}
+
+.modal-review__container {
+  position: relative;
+  width: 698px;
+  min-height: 415px;
+  padding: 30px 35px 35px;
+  box-sizing: border-box;
+  background-color: rgba(245, 245, 249, 1);
+}
+
+.modal-review__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'userName rating'
+                       'dignity comment'
+                       'limitations comment'
+                       'submit submit';
+  row-gap: 16px;
+  column-gap: 28px;
+  width: 100%;
+  margin-top: 48px;
+}
+
+.modal-review__title {
+  font-family: $basic-font;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 34px;
+  color: rgba(72, 73, 77, 1);
+  margin: 0;
+  text-align: center;
+}
+
+.modal-review__field-container {
+  position: relative;
+
+  &--required::after {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    content: '*';
+    font-family: $special-font;
+    font-weight: 700;
+    font-size: 17px;
+    color: rgba(209, 33, 54, 1);
+  }
+
+  &--name {
+    grid-area: userName;
+  }
+  &--comment {
+    margin-top: -3px;
+    grid-area: comment;
+  }
+
+  &--dignity {
+    grid-area: dignity;  
+  }
+  &--limitations {
+    grid-area: limitations; 
+  }
+}
+
+.modal-review__field {
+  padding: 15px 25px;
+  border: 1px solid rgba(72, 73, 77, 0.2);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  resize: none;
+
+  &::placeholder {
+    font-family: $basic-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba(72, 73, 77, 1);
+  }
+
+  &:invalid {
+    border-color: rgba(255, 0, 0, 1);
+  }
+
+  &:invalid  + .modal-review__invalid-message{
+    display: block;
+  }
+}
+
+.modal-review__invalid-message {
+  display: none;
+  position: absolute;
+  top: -24px;
+  left: 0;
+  font-family: $basic-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(255, 0, 0, 1);
+  width: 100%;
+  margin: 0;
+}
+
+.modal-review__rating {
+  grid-area: rating;
+}
+
+.modal-review__submit {
+  grid-area: submit;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-family: $basic-font;
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  padding: 18.5px 20px 16.5px 4px;
+  margin-top: 20px;
+  border: none;
+  width: 190px;
+  min-height: 52px;
+  box-sizing: border-box;
+  background-color: rgba(209, 33, 54, 1);
+  cursor: pointer;
+}
+
+.modal-review__close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 15px;
+  height: 15px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 6px;
+    left: -1px;
+    width: 18px;
+    height: 2px;
+    content: '';
+    background-color: rgba(159, 158, 158, 1);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}

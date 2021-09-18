@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Review from '../review/review';
-import { userReviews } from '../../mocks/reviews';
 import Button from '../button/button';
 import './reviews.scss';
+import ModalReview from '../modal-review/modal-review.jsx';
+import { useSelector } from 'react-redux';
+import { getReviews } from '../../store/reviews/selectors';
 
-function Reviews(props) {
+function Reviews({ className }) {
+  const [isModalOpened, setIsModalOpened] = useState(false);
+  const reviews = useSelector(getReviews)
+
+  const handleButtonClick = (evt) => {
+    evt.preventDefault();
+    setIsModalOpened(true)
+  }
+
   return (
-    <section className={`${props.className ?? ''} reviews`}>
+    <section className={`${className ?? ''} reviews`}>
       <h2 className='visually-hidden'>Отзывы</h2>
       {
-        userReviews.length ?
+        reviews.length ?
           <ul className='reviews__list'>
-            {userReviews.map((review) => (
+            {reviews.map((review) => (
               <li key={review.id} className='reviews__item'>
                 <Review className='reviews__review' userReview={review} />
               </li>
@@ -20,7 +30,8 @@ function Reviews(props) {
           </ul> :
           null
       }
-      <Button className='reviews__button' href='/'>Оставить отзыв</Button>
+      <Button onClick={handleButtonClick} className='reviews__button' href='/'>Оставить отзыв</Button>
+      {isModalOpened ? <ModalReview closeModal={setIsModalOpened} /> : null}
     </section>
   );
 }

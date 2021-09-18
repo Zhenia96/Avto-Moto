@@ -2,49 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { RatingLabels } from '../../constants';
 import './review.scss';
+import { getPassedTime } from './passed-time-calculator';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat)
 
 function getTimeForDateTime(reviewTimestamp) {
   return dayjs(reviewTimestamp).format('YYYY-MM-DD HH:mm:ss');
-}
-
-function getPassedTime(reviewTimestamp) {
-  const currerntTime = dayjs();
-  const reviewTime = dayjs(reviewTimestamp);
-  let time;
-  let untiName;
-
-  if ((currerntTime.$y - reviewTime.$y) > 0) {
-    time = (currerntTime.$y - reviewTime.$y);
-    untiName = 'год'
-  }
-  if ((currerntTime.$M - reviewTime.$M) > 0) {
-    time = (currerntTime.$M - reviewTime.$M);
-    untiName = 'месяц'
-  }
-  if ((currerntTime.$W - reviewTime.$W) > 0) {
-    time = (currerntTime.$W - reviewTime.$W);
-    untiName = 'неделю'
-  }
-  if ((currerntTime.$D - reviewTime.$D) > 0) {
-    time = (currerntTime.$D - reviewTime.$D);
-    untiName = 'день'
-  }
-  if ((currerntTime.$H - reviewTime.$H) > 0) {
-    time = (currerntTime.$H - reviewTime.$H);
-    untiName = 'час'
-  }
-  if ((currerntTime.$m - reviewTime.$m) > 0) {
-    time = (currerntTime.$m - reviewTime.$m);
-    untiName = 'минуту'
-  } else {
-    time = (currerntTime.$s - reviewTime.$s);
-    untiName = 'секунду'
-  }
-
-  return `${time} ${untiName} назад`;
 }
 
 function getPercentageRating(ratingValue) {

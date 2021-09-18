@@ -1,25 +1,77 @@
+@import '../../scss/variables.scss';
+
 .rating {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 10px;
+  margin: 0;
+  border: 0;
+}
 
-  &:not(:hover) {
-    & .rating__field:checked ~ .rating__star{
-      background-image: url('/img/star-icon.svg');
-    }
-  }
+.rating__title {
+  font-family: $basic-font;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 1);
+  margin-right: 10px;
+}
 
-  &:hover {
-    & .rating__star:hover ~ .rating__star {
-      background-image: url('/img/star-icon.svg');
-    }
+.rating__stars,
+.rating__star {
+  height: 26px;
+  background-size: 35px 26px;
+  background-repeat: repeat-x;
+}
+
+.rating__stars {
+  position: relative;
+  width: 170px;
+  background-image: url('/img/star-icon.svg');
+
+  &:focus-within {
+    outline: 1px solid rgba(0, 0, 0, 1);  
   }
 }
 
 .rating__star {
-  font-size: inherit;
-  width: 0.17em;
-  height: 0.17em;
-  padding-left: 0.05em;
+  position: absolute;
+  width: 20%;
   background-image: url('/img/active-star-icon.svg');
-  background-size: 0.17em 0.17em;
-  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 5;
+  cursor: pointer;
+
+  &:nth-of-type(2) {
+    width: 40%;
+    z-index: 4;
+  }
+
+  &:nth-of-type(3) {
+    width: 60%;
+    z-index: 3;
+  }
+
+  &:nth-of-type(4) {
+    width: 80%;
+    z-index: 2;
+  }
+
+  &:nth-of-type(5) {
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.rating__field:checked + .rating__star {
+  opacity: 1;
+}
+
+.rating__star:hover {
+  opacity: 1;
+}
+
+.rating__star:hover ~ .rating__star {
+  opacity: 0;
 }

@@ -1,7 +1,5 @@
-import { NameSpace } from '../../constants.js';
+import { NameSpace } from '../../constants';
 
 const getReviews = (state) => state[NameSpace.REVIEW].reviews;
 
-export {
-  getReviews,
-}
+export default getReviews;

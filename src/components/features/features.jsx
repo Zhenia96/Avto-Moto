@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './features.scss';
 
-function Features(props) {
+function Features({ className }) {
   return (
-    <section className={`${props.className ?? ''} features`}>
+    <section className={`${className} features`}>
       <h2 className='visually-hidden'>Характеристики</h2>
       <dl className='features__list'>
         <div className='features__item'>
@@ -41,7 +41,7 @@ function Features(props) {
 }
 
 Features.propTypes = {
-  className: PropTypes.string,
-}
+  className: PropTypes.string.isRequired,
+};
 
 export default Features;

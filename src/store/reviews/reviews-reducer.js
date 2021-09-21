@@ -15,6 +15,4 @@ const reviewsReducer = createReducer(initialState, (builder) => {
     }));
 });
 
-export {
-  reviewsReducer,
-}
+export default reviewsReducer;

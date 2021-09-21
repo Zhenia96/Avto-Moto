@@ -9,11 +9,11 @@ const ActionType = {
 
 const NameSpace = {
   REVIEW: 'review',
-}
+};
 
 export {
   RatingLabels,
   REVIEWS_LENGTH,
   ActionType,
-  NameSpace
-}
+  NameSpace,
+};

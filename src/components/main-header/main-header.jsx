@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../logo/logo.jsx';
-import SiteMenu from '../site-menu/site-menu.jsx';
+import Logo from '../logo/logo';
+import SiteMenu from '../site-menu/site-menu';
 import './main-header.scss';
 
 function MainHeader() {

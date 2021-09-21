@@ -29,4 +29,4 @@ function getPictures() {
   return pictures;
 }
 
-export { getPictures };
+export default getPictures;

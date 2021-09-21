@@ -15,15 +15,14 @@ const getUnitName = (time, namespace) => {
   const timeAsString = String(time);
 
   if (REGULAR_EXPRESSION_FOR_FIRST_NAMES.test(timeAsString)) {
-    return namespace[0]
+    return namespace[0];
   }
   if (REGULAR_EXPRESSION_FOR_SECOND_NAMES.test(timeAsString)) {
-    return namespace[1]
+    return namespace[1];
   }
-  else {
-    return namespace[2]
-  }
-}
+
+  return namespace[2];
+};
 
 function getPassedTime(reviewTimestamp) {
   const currerntTime = dayjs();
@@ -62,6 +61,4 @@ function getPassedTime(reviewTimestamp) {
   return `${time} ${unitName} назад`;
 }
 
-export {
-  getPassedTime
-}
+export default getPassedTime;

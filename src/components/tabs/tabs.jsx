@@ -9,34 +9,31 @@ const Tab = {
   FEATURE: 'feature',
   REVIEW: 'review',
   CONTACT: 'contact',
-}
+};
 
 const DEFAULT_TAB_VALUE = Tab.FEATURE;
 
-const getActiveTabClassName = (activeTab, tab) => {
-  return activeTab === tab ?
-    'tabs__link--active' :
-    '';
-}
+const getActiveTabClassName = (activeTab, tab) => (activeTab === tab
+  ? 'tabs__link--active'
+  : '');
 
-function Tabs(props) {
-  const [activeTab, setActiveTab] = useState(DEFAULT_TAB_VALUE)
+function Tabs({ className }) {
+  const [activeTab, setActiveTab] = useState(DEFAULT_TAB_VALUE);
 
   const handleTabsFocus = (evt) => {
-    console.log(evt)
     evt.preventDefault();
     const currentTab = evt.target;
     if (activeTab !== currentTab.dataset.value) {
       setActiveTab(currentTab.dataset.value);
     }
-  }
+  };
 
   const handleTabsClick = (evt) => {
     evt.preventDefault();
-  }
+  };
 
   return (
-    <div className={`${props.className ?? ''} tabs`}>
+    <div className={`${className} tabs`}>
       <ul className='tabs__link-list' onFocus={handleTabsFocus} onClick={handleTabsClick}>
         <li className='tabs__item'>
           <a className={`tabs__link ${getActiveTabClassName(activeTab, Tab.FEATURE)}`} data-value='feature' href='./#'>Характеристики</a>
@@ -55,8 +52,8 @@ function Tabs(props) {
   );
 }
 
-Contacts.propTypes = {
-  className: PropTypes.string,
-}
+Tabs.propTypes = {
+  className: PropTypes.string.isRequired,
+};
 
 export default Tabs;

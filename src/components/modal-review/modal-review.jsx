@@ -4,18 +4,24 @@ import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import Rating from '../rating/rating';
 import { RatingLabels } from '../../constants';
-import {
-  useComment, useDignity, useLimitation, useName, useRating,
-} from './hooks';
 import { addReview } from '../../store/action';
+import useField from './use-field';
 import './modal-review.scss';
 
+const FieldName = {
+  NAME: 'name',
+  DIGNITY: 'dignity',
+  LIMITATION: 'limitation',
+  COMMENT: 'comment',
+  RATING: 'rating',
+};
+
 function ModalReview({ closeModal }) {
-  const [rating, setRating] = useRating(0);
-  const [name, setName] = useName('');
-  const [dignity, setDignity] = useDignity('');
-  const [limitation, setLimitation] = useLimitation('');
-  const [comment, setComment] = useComment('');
+  const [rating, setRating] = useField(0, FieldName.RATING);
+  const [name, setName] = useField('', FieldName.NAME);
+  const [dignity, setDignity] = useField('', FieldName.DIGNITY);
+  const [limitation, setLimitation] = useField('', FieldName.LIMITATION);
+  const [comment, setComment] = useField('', FieldName.COMMENT);
 
   const dispatch = useDispatch();
 
@@ -39,7 +45,7 @@ function ModalReview({ closeModal }) {
     dignity,
     limitations: limitation,
     comment,
-    ratingValue: rating,
+    ratingValue: Number(rating),
     reviewTimestamp: Date.now(),
   });
 
@@ -102,7 +108,7 @@ function ModalReview({ closeModal }) {
             <label className='visually-hidden' htmlFor='limitations'>Введите недостатки</label>
             <input onInput={handleLimitationsInput} className='modal-review__field' type='text' name='limitations' id='limitations' placeholder='Недостатки' value={limitation} />
           </div>
-          <Rating onRatingChange={handleRatingChange} className='modal-review__rating' labelTitls={RatingLabels} value={rating} />
+          <Rating onRatingChange={handleRatingChange} className='modal-review__rating' labelTitls={RatingLabels} value={Number(rating)} />
 
           <div className='modal-review__field-container modal-review__field-container--required modal-review__field-container--comment'>
             <label className='visually-hidden' htmlFor='comment'>Напишите комментарий</label>

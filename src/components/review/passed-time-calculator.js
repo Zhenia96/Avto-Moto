@@ -25,36 +25,36 @@ const getUnitName = (time, namespace) => {
 };
 
 function getPassedTime(reviewTimestamp) {
-  const currerntTime = dayjs();
+  const currentTime = dayjs();
   const reviewTime = dayjs(reviewTimestamp);
   let time;
   let unitName;
 
-  if ((currerntTime.$y - reviewTime.$y) > 0) {
-    time = (currerntTime.$y - reviewTime.$y);
+  if ((currentTime.$y - reviewTime.$y) > 0) {
+    time = (currentTime.$y - reviewTime.$y);
     unitName = getUnitName(time, yearNamespace);
   }
-  if ((currerntTime.$M - reviewTime.$M) > 0) {
-    time = (currerntTime.$M - reviewTime.$M);
+  if ((currentTime.$M - reviewTime.$M) > 0) {
+    time = (currentTime.$M - reviewTime.$M);
     unitName = getUnitName(time, monthNamespace);
   }
-  if ((currerntTime.$W - reviewTime.$W) > 0) {
-    time = (currerntTime.$W - reviewTime.$W);
+  if ((currentTime.$W - reviewTime.$W) > 0) {
+    time = (currentTime.$W - reviewTime.$W);
     unitName = getUnitName(time, weekNamespace);
   }
-  if ((currerntTime.$D - reviewTime.$D) > 0) {
-    time = (currerntTime.$D - reviewTime.$D);
+  if ((currentTime.$D - reviewTime.$D) > 0) {
+    time = (currentTime.$D - reviewTime.$D);
     unitName = getUnitName(time, dayNamespace);
   }
-  if ((currerntTime.$H - reviewTime.$H) > 0) {
-    time = (currerntTime.$H - reviewTime.$H);
+  if ((currentTime.$H - reviewTime.$H) > 0) {
+    time = (currentTime.$H - reviewTime.$H);
     unitName = getUnitName(time, hourNamespace);
   }
-  if ((currerntTime.$m - reviewTime.$m) > 0) {
-    time = (currerntTime.$m - reviewTime.$m);
+  if ((currentTime.$m - reviewTime.$m) > 0) {
+    time = (currentTime.$m - reviewTime.$m);
     unitName = getUnitName(time, minuteNamespace);
   } else {
-    time = (currerntTime.$s - reviewTime.$s);
+    time = (currentTime.$s - reviewTime.$s);
     unitName = getUnitName(time, secondNamespace);
   }
 

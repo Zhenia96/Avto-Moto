@@ -19,11 +19,11 @@ function Contacts({ className }) {
         </p>
         <p className='contacts__item'>
           <span className='contacts__name'>Телефон</span>
-          <a href='tel:88003335599'>8 (800) 333-55-99</a>
+          <a className='contacts__link' href='tel:88003335599'>8 (800) 333-55-99</a>
         </p>
         <p className='contacts__item'>
           <span className='contacts__name'>E-mail</span>
-          <a href='mailto:info@avto-moto.ru'>info@avto-moto.ru</a>
+          <a className='contacts__link' href='mailto:info@avto-moto.ru'>info@avto-moto.ru</a>
         </p>
       </address>
       <iframe

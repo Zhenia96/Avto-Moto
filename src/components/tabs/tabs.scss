@@ -16,6 +16,8 @@
 }
 
 .tabs__link {
+  @include reset-link;
+
   display: block;
   padding: 13px;
   border: 1px solid rgba(215, 217, 223, 1);

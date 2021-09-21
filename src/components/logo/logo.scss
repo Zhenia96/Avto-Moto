@@ -1,6 +1,9 @@
 @import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 .logo {
+  @include reset-link;
+
   display: flex;
   align-items: center;
 }

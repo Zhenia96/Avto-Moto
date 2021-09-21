@@ -20,6 +20,8 @@
 }
 
 .site-menu__link {
+  @include reset-link;
+
   display: block;
   padding-bottom: 10px;
 }

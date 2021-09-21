@@ -1,9 +1,14 @@
 @import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 .contacts {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.contacts__link {
+  @include reset-link;
 }
 
 .contacts__info {

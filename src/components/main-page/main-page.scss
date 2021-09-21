@@ -1,4 +1,5 @@
 @import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 .page {
   display: flex;
@@ -78,6 +79,8 @@
 }
 
 .page__button {
+  @include reset-link;
+
   display: block;
   font-family: $basic-font;
   font-weight: 600;

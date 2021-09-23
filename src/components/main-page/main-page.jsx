@@ -4,7 +4,6 @@ import MainHeader from '../main-header/main-header';
 import ShortDescription from '../short-description/short-description';
 import Gallery from '../gallery/gallery';
 import Tabs from '../tabs/tabs';
-import Button from '../button/button';
 import './main-page.scss';
 
 function MainPage() {
@@ -23,7 +22,7 @@ function MainPage() {
             </del>
           </p>
           <a className='page__button page__button--request' href='./#'>оставить заявку</a>
-          <Button className='page__button page__button--credit' href='./#'>В кредит от 11 000 ₽</Button>
+          <a className='page__button page__button--credit' href='./#'>В кредит от 11 000 ₽</a>
         </div>
         <Gallery />
         <Tabs className='page__tabs' />

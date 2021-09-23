@@ -104,5 +104,16 @@
 
   &--credit {
     margin-top: 15px;
+    letter-spacing: 0.11em;
+    color: rgba(209, 33, 54, 1);
+    border: 1px solid rgba(209, 33, 54, 1);
+
+    &:hover,
+    &:focus {
+      color: rgba(255, 255, 255, 1);
+      background-color:rgba(209, 33, 54, 1);
+    }
   }
 }
+
+

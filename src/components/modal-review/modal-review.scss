@@ -63,16 +63,22 @@
   &--name {
     grid-area: userName;
   }
+
   &--comment {
     margin-top: -3px;
     grid-area: comment;
   }
 
   &--dignity {
-    grid-area: dignity;  
+    grid-area: dignity;
   }
+
   &--limitations {
-    grid-area: limitations; 
+    grid-area: limitations;
+  }
+
+  &--invalid {
+    outline: 1px solid rgba(255, 0, 0, 1);
   }
 }
 
@@ -91,14 +97,6 @@
     line-height: 19px;
     color: rgba(72, 73, 77, 1);
   }
-
-  &:invalid {
-    border-color: rgba(255, 0, 0, 1);
-  }
-
-  &:invalid  + .modal-review__invalid-message{
-    display: block;
-  }
 }
 
 .modal-review__invalid-message {
@@ -113,6 +111,11 @@
   color: rgba(255, 0, 0, 1);
   width: 100%;
   margin: 0;
+
+}
+
+.modal-review__field-container--invalid  .modal-review__invalid-message {
+  display: block;
 }
 
 .modal-review__rating {

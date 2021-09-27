@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import getIsPageScrolled from '../../store/page/selectors';
 import MainFooter from '../main-footer/main-footer';
 import MainHeader from '../main-header/main-header';
 import ShortDescription from '../short-description/short-description';
@@ -6,9 +8,13 @@ import Gallery from '../gallery/gallery';
 import Tabs from '../tabs/tabs';
 import './main-page.scss';
 
+const PAGE_NO_SCROLL_CLASS_NAME = 'page--no-scroll';
+
 function MainPage() {
+  const isPageScrolled = useSelector(getIsPageScrolled);
+
   return (
-    <div className='page'>
+    <div className={`page ${!isPageScrolled ? PAGE_NO_SCROLL_CLASS_NAME : ''}`}>
       <MainHeader />
       <main className='page__content wrapper'>
         <div className='page__column'>

@@ -6,6 +6,10 @@
   flex-direction: column;
   height: 100vh;
   min-width: $desktop-width;
+
+  &--no-scroll {
+    overflow: hidden;
+  }
 }
 
 .page__content {

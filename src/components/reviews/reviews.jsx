@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeIsPageScrolled } from '../../store/action';
 import Review from '../review/review';
 import Button from '../button/button';
 import ModalReview from '../modal-review/modal-review';
@@ -12,9 +13,17 @@ function Reviews({ className }) {
   const [isModalOpened, setIsModalOpened] = useState(false);
   const reviews = useSelector(getReviews);
 
+  const dispatch = useDispatch();
+
   const handleButtonClick = (evt) => {
     evt.preventDefault();
     setIsModalOpened(true);
+    dispatch(changeIsPageScrolled());
+  };
+
+  const closeModal = () => {
+    setIsModalOpened(false);
+    dispatch(changeIsPageScrolled());
   };
 
   return (
@@ -37,7 +46,7 @@ function Reviews({ className }) {
       {isModalOpened
         ? (
           <ModalPortal>
-            <ModalReview closeModal={setIsModalOpened} />
+            <ModalReview closeModal={closeModal} />
           </ModalPortal>
         )
         : null}

@@ -33,7 +33,7 @@ function ModalReview({ closeModal }) {
   useEffect(() => {
     const handleEscButtonKeydown = (evt) => {
       if (evt.key === 'Escape') {
-        closeModal(false);
+        closeModal();
       }
     };
 
@@ -55,12 +55,12 @@ function ModalReview({ closeModal }) {
   });
 
   const handleCloseButtonClick = () => {
-    closeModal(false);
+    closeModal();
   };
 
   const handlePopupWrapperMouseDown = (evt) => {
     if (evt.target.classList.contains('modal-review')) {
-      closeModal(false);
+      closeModal();
     }
   };
 
@@ -95,7 +95,7 @@ function ModalReview({ closeModal }) {
     if (name.trim() && comment.trim()) {
       dispatch(addReview(createReviewForStore()));
       localStorage.clear();
-      closeModal(false);
+      closeModal();
     }
   };
 

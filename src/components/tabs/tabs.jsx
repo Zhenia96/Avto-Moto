@@ -30,6 +30,10 @@ function Tabs({ className }) {
 
   const handleTabsClick = (evt) => {
     evt.preventDefault();
+    const currentTab = evt.target;
+    if (activeTab !== currentTab.dataset.value) {
+      setActiveTab(currentTab.dataset.value);
+    }
   };
 
   return (

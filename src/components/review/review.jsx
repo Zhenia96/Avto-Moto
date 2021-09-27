@@ -49,17 +49,13 @@ function Review({ className, userReview }) {
           <span className='review__big-text'>Комментарий</span>
           {comment}
         </p>
-        {ratingValue
-          ? (
-            <div className='review__rating'>
-              <span className='visually-hidden'>Рейтинг</span>
-              <div className='review__rating-container'>
-                <div className='review__rating-value' style={{ width: getPercentageRating(ratingValue) }} />
-              </div>
-              <span className='review__rating-description'>{getRatingLabel(ratingValue)}</span>
-            </div>
-          )
-          : null}
+        <div className='review__rating'>
+          <span className='visually-hidden'>Рейтинг</span>
+          <div className='review__rating-container'>
+            <div className='review__rating-value' style={{ width: getPercentageRating(ratingValue) }} />
+          </div>
+          <span className='review__rating-description'>{getRatingLabel(ratingValue)}</span>
+        </div>
       </blockquote>
       <footer className='review__footer'>
         <time className='review__time' dateTime={getTimeForDateTime(reviewTimestamp)}>{getPassedTime(reviewTimestamp)}</time>

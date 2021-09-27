@@ -148,10 +148,11 @@
 
 .modal-review__close {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 17px;
+  right: 18px;
   width: 15px;
   height: 15px;
+  padding: 15px;
   border: none;
   background-color: inherit;
   cursor: pointer;
@@ -159,8 +160,8 @@
   &::before,
   &::after {
     position: absolute;
-    top: 6px;
-    left: -1px;
+    top: 14px;
+    left: 6px;
     width: 18px;
     height: 2px;
     content: '';

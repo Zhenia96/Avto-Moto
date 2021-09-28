@@ -50,6 +50,7 @@
 .page__price {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 38px;
 }
 
@@ -58,7 +59,8 @@
   font-size: 36px;
   line-height: 48px;
   color: rgba(72, 73, 77, 1);
-  margin-right: 23px;
+  margin-right: 21px;
+  white-space: nowrap;
 }
 
 .page__price-old {
@@ -69,6 +71,7 @@
   color: rgba(72, 73, 77, 0.5);
   text-decoration: none;
   padding: 4px 2px 0 7px;
+  white-space: nowrap;
 
   &::after {
     position: absolute;
